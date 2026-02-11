@@ -128,18 +128,97 @@ app.post('/auth/login', async (c) => {
 });
 // Protected routes (require auth)
 app.use('/api/*', authMiddleware);
-// Placeholder routes
-app.get('/api/stores', (c) => {
-    return c.json({ message: 'Get stores endpoint - to be implemented' });
+// Store routes
+app.post('/api/stores', async (c) => {
+    const { createStore } = await import('@/api/handlers/store');
+    return createStore(c);
 });
-app.get('/api/products', (c) => {
-    return c.json({ message: 'Get products endpoint - to be implemented' });
+app.get('/api/stores', async (c) => {
+    const { getUserStores } = await import('@/api/handlers/store');
+    return getUserStores(c);
 });
-app.get('/api/orders', (c) => {
-    return c.json({ message: 'Get orders endpoint - to be implemented' });
+app.get('/api/stores/:storeId', async (c) => {
+    const { getStore } = await import('@/api/handlers/store');
+    return getStore(c);
 });
-app.get('/api/customers', (c) => {
-    return c.json({ message: 'Get customers endpoint - to be implemented' });
+app.get('/api/stores/slug/:slug', async (c) => {
+    const { getStoreBySlug } = await import('@/api/handlers/store');
+    return getStoreBySlug(c);
+});
+app.put('/api/stores/:storeId', async (c) => {
+    const { updateStore } = await import('@/api/handlers/store');
+    return updateStore(c);
+});
+app.delete('/api/stores/:storeId', async (c) => {
+    const { deleteStore } = await import('@/api/handlers/store');
+    return deleteStore(c);
+});
+// Product routes
+app.post('/api/stores/:storeId/products', async (c) => {
+    const { createProduct } = await import('@/api/handlers/product');
+    return createProduct(c);
+});
+app.get('/api/stores/:storeId/products', async (c) => {
+    const { listProducts } = await import('@/api/handlers/product');
+    return listProducts(c);
+});
+app.get('/api/stores/:storeId/products/:productId', async (c) => {
+    const { getProduct } = await import('@/api/handlers/product');
+    return getProduct(c);
+});
+app.put('/api/stores/:storeId/products/:productId', async (c) => {
+    const { updateProduct } = await import('@/api/handlers/product');
+    return updateProduct(c);
+});
+app.delete('/api/stores/:storeId/products/:productId', async (c) => {
+    const { deleteProduct } = await import('@/api/handlers/product');
+    return deleteProduct(c);
+});
+app.get('/api/stores/:storeId/products/search', async (c) => {
+    const { searchProducts } = await import('@/api/handlers/product');
+    return searchProducts(c);
+});
+// Customer routes
+app.post('/api/stores/:storeId/customers', async (c) => {
+    const { createCustomer } = await import('@/api/handlers/customer');
+    return createCustomer(c);
+});
+app.get('/api/stores/:storeId/customers', async (c) => {
+    const { listCustomers } = await import('@/api/handlers/customer');
+    return listCustomers(c);
+});
+app.get('/api/stores/:storeId/customers/:customerId', async (c) => {
+    const { getCustomer } = await import('@/api/handlers/customer');
+    return getCustomer(c);
+});
+app.put('/api/stores/:storeId/customers/:customerId', async (c) => {
+    const { updateCustomer } = await import('@/api/handlers/customer');
+    return updateCustomer(c);
+});
+app.delete('/api/stores/:storeId/customers/:customerId', async (c) => {
+    const { deleteCustomer } = await import('@/api/handlers/customer');
+    return deleteCustomer(c);
+});
+// Order routes
+app.post('/api/stores/:storeId/orders', async (c) => {
+    const { createOrder } = await import('@/api/handlers/order');
+    return createOrder(c);
+});
+app.get('/api/stores/:storeId/orders', async (c) => {
+    const { listOrders } = await import('@/api/handlers/order');
+    return listOrders(c);
+});
+app.get('/api/stores/:storeId/orders/:orderId', async (c) => {
+    const { getOrder } = await import('@/api/handlers/order');
+    return getOrder(c);
+});
+app.put('/api/stores/:storeId/orders/:orderId/status', async (c) => {
+    const { updateOrderStatus } = await import('@/api/handlers/order');
+    return updateOrderStatus(c);
+});
+app.post('/api/stores/:storeId/orders/:orderId/cancel', async (c) => {
+    const { cancelOrder } = await import('@/api/handlers/order');
+    return cancelOrder(c);
 });
 // Start server
 const env = getEnv();

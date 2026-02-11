@@ -1,0 +1,111 @@
+import type { CreateStoreInput, UpdateStoreInput } from '@/lib/validation';
+export declare class StoreService {
+    createStore(userId: number, data: CreateStoreInput): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }>;
+    getStore(storeId: number): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }>;
+    getStoreBySlug(slug: string): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }>;
+    getUserStores(userId: number): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }[]>;
+    updateStore(storeId: number, userId: number, data: UpdateStoreInput): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }>;
+    updateStoreLogo(storeId: number, userId: number, logoUrl: string): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }>;
+    deleteStore(storeId: number, userId: number): Promise<{
+        name: string;
+        description: string | null;
+        id: number;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
+        created_at: Date;
+        updated_at: Date;
+        user_id: number;
+        slug: string;
+        logo_url: string | null;
+        banner_url: string | null;
+        is_active: boolean;
+    }>;
+    private generateSlug;
+}
+export declare function createStoreService(): StoreService;
+//# sourceMappingURL=store.service.d.ts.map
