@@ -1,26 +1,46 @@
 {
   "name": "unified-agentic-os",
   "version": "0.1.0",
-  "private": true,
+  "description": "AI-powered unified commerce platform for UMKM Indonesia",
+  "type": "module",
+  "main": "dist/main.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc && tsc --noEmit",
+    "start": "node dist/main.js",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:push": "drizzle-kit push:pg",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "hono": "^4.0.0",
+    "drizzle-orm": "^0.30.0",
+    "postgres": "^3.4.0",
+    "zod": "^3.22.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.6",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.10.0",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/bcryptjs": "^2.4.6",
+    "vitest": "^1.1.0",
+    "@vitest/coverage-v8": "^1.1.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "prettier": "^3.1.0",
+    "drizzle-kit": "^0.20.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   }
 }
