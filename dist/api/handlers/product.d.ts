@@ -4,17 +4,17 @@ export declare function createProduct(c: Context): Promise<Response & import("ho
     data: {
         name: string;
         description: string | null;
+        price: string;
+        cost_price: string | null;
+        sku: string | null;
+        category: string | null;
+        image_urls: import("hono/utils/types").JSONValue;
         id: number;
         is_active: boolean;
         created_at: string;
         updated_at: string;
         slug: string;
         store_id: number;
-        price: string;
-        cost_price: string | null;
-        sku: string | null;
-        category: string | null;
-        image_urls: import("hono/utils/types").JSONValue;
     };
 }, any, "json">>;
 export declare function getProduct(c: Context): Promise<Response & import("hono").TypedResponse<{
@@ -22,17 +22,17 @@ export declare function getProduct(c: Context): Promise<Response & import("hono"
     data: {
         name: string;
         description: string | null;
+        price: string;
+        cost_price: string | null;
+        sku: string | null;
+        category: string | null;
+        image_urls: import("hono/utils/types").JSONValue;
         id: number;
         is_active: boolean;
         created_at: string;
         updated_at: string;
         slug: string;
         store_id: number;
-        price: string;
-        cost_price: string | null;
-        sku: string | null;
-        category: string | null;
-        image_urls: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 export declare function listProducts(c: Context): Promise<Response & import("hono").TypedResponse<{
@@ -40,17 +40,17 @@ export declare function listProducts(c: Context): Promise<Response & import("hon
     data: {
         name: string;
         description: string | null;
+        price: string;
+        cost_price: string | null;
+        sku: string | null;
+        category: string | null;
+        image_urls: import("hono/utils/types").JSONValue;
         id: number;
         is_active: boolean;
         created_at: string;
         updated_at: string;
         slug: string;
         store_id: number;
-        price: string;
-        cost_price: string | null;
-        sku: string | null;
-        category: string | null;
-        image_urls: import("hono/utils/types").JSONValue;
     }[];
     pagination: {
         limit: number;
@@ -62,17 +62,17 @@ export declare function updateProduct(c: Context): Promise<Response & import("ho
     data: {
         name: string;
         description: string | null;
+        price: string;
+        cost_price: string | null;
+        sku: string | null;
+        category: string | null;
+        image_urls: import("hono/utils/types").JSONValue;
         id: number;
         is_active: boolean;
         created_at: string;
         updated_at: string;
         slug: string;
         store_id: number;
-        price: string;
-        cost_price: string | null;
-        sku: string | null;
-        category: string | null;
-        image_urls: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 export declare function deleteProduct(c: Context): Promise<Response & import("hono").TypedResponse<{
@@ -81,17 +81,17 @@ export declare function deleteProduct(c: Context): Promise<Response & import("ho
     data: {
         name: string;
         description: string | null;
+        price: string;
+        cost_price: string | null;
+        sku: string | null;
+        category: string | null;
+        image_urls: import("hono/utils/types").JSONValue;
         id: number;
         is_active: boolean;
         created_at: string;
         updated_at: string;
         slug: string;
         store_id: number;
-        price: string;
-        cost_price: string | null;
-        sku: string | null;
-        category: string | null;
-        image_urls: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 export declare function searchProducts(c: Context): Promise<Response & import("hono").TypedResponse<{
@@ -99,17 +99,17 @@ export declare function searchProducts(c: Context): Promise<Response & import("h
     data: {
         name: string;
         description: string | null;
+        price: string;
+        cost_price: string | null;
+        sku: string | null;
+        category: string | null;
+        image_urls: import("hono/utils/types").JSONValue;
         id: number;
         is_active: boolean;
         created_at: string;
         updated_at: string;
         slug: string;
         store_id: number;
-        price: string;
-        cost_price: string | null;
-        sku: string | null;
-        category: string | null;
-        image_urls: import("hono/utils/types").JSONValue;
     }[];
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 //# sourceMappingURL=product.d.ts.map

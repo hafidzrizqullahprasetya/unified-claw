@@ -72,7 +72,7 @@ export declare const users: import("drizzle-orm/pg-core").PgTableWithColumns<{
             tableName: "users";
             dataType: "string";
             columnType: "PgEnumColumn";
-            data: "admin" | "seller" | "customer";
+            data: "seller" | "admin" | "customer";
             driverParam: string;
             notNull: true;
             hasDefault: true;
@@ -827,7 +827,7 @@ export declare const orders: import("drizzle-orm/pg-core").PgTableWithColumns<{
             tableName: "orders";
             dataType: "string";
             columnType: "PgEnumColumn";
-            data: "whatsapp" | "telegram" | "web" | "mobile" | "api";
+            data: "web" | "whatsapp" | "telegram" | "mobile" | "api";
             driverParam: string;
             notNull: true;
             hasDefault: true;
@@ -1045,7 +1045,7 @@ export declare const payments: import("drizzle-orm/pg-core").PgTableWithColumns<
             tableName: "payments";
             dataType: "string";
             columnType: "PgEnumColumn";
-            data: "qris" | "bank_transfer" | "credit_card" | "e_wallet" | "cash";
+            data: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
             driverParam: string;
             notNull: true;
             hasDefault: false;
@@ -1148,7 +1148,7 @@ export declare const payment_methods: import("drizzle-orm/pg-core").PgTableWithC
             tableName: "payment_methods";
             dataType: "string";
             columnType: "PgEnumColumn";
-            data: "qris" | "bank_transfer" | "credit_card" | "e_wallet" | "cash";
+            data: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
             driverParam: string;
             notNull: true;
             hasDefault: false;
@@ -1445,7 +1445,7 @@ export declare const customer_messages: import("drizzle-orm/pg-core").PgTableWit
             tableName: "customer_messages";
             dataType: "string";
             columnType: "PgEnumColumn";
-            data: "whatsapp" | "telegram" | "web" | "mobile" | "api";
+            data: "web" | "whatsapp" | "telegram" | "mobile" | "api";
             driverParam: string;
             notNull: true;
             hasDefault: false;

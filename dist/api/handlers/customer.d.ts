@@ -3,16 +3,16 @@ export declare function createCustomer(c: Context): Promise<Response & import("h
     success: true;
     data: {
         name: string;
-        id: number;
         email: string | null;
         phone: string;
-        created_at: string;
-        updated_at: string;
         city: string | null;
         province: string | null;
         postal_code: string | null;
-        store_id: number;
         address: string | null;
+        id: number;
+        created_at: string;
+        updated_at: string;
+        store_id: number;
         metadata: import("hono/utils/types").JSONValue;
     };
 }, any, "json">>;
@@ -20,16 +20,16 @@ export declare function getCustomer(c: Context): Promise<Response & import("hono
     success: true;
     data: {
         name: string;
-        id: number;
         email: string | null;
         phone: string;
-        created_at: string;
-        updated_at: string;
         city: string | null;
         province: string | null;
         postal_code: string | null;
-        store_id: number;
         address: string | null;
+        id: number;
+        created_at: string;
+        updated_at: string;
+        store_id: number;
         metadata: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
@@ -37,16 +37,16 @@ export declare function listCustomers(c: Context): Promise<Response & import("ho
     success: true;
     data: {
         name: string;
-        id: number;
         email: string | null;
         phone: string;
-        created_at: string;
-        updated_at: string;
         city: string | null;
         province: string | null;
         postal_code: string | null;
-        store_id: number;
         address: string | null;
+        id: number;
+        created_at: string;
+        updated_at: string;
+        store_id: number;
         metadata: import("hono/utils/types").JSONValue;
     }[];
     pagination: {
@@ -58,16 +58,16 @@ export declare function updateCustomer(c: Context): Promise<Response & import("h
     success: true;
     data: {
         name: string;
-        id: number;
         email: string | null;
         phone: string;
-        created_at: string;
-        updated_at: string;
         city: string | null;
         province: string | null;
         postal_code: string | null;
-        store_id: number;
         address: string | null;
+        id: number;
+        created_at: string;
+        updated_at: string;
+        store_id: number;
         metadata: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
@@ -76,16 +76,16 @@ export declare function deleteCustomer(c: Context): Promise<Response & import("h
     message: string;
     data: {
         name: string;
-        id: number;
         email: string | null;
         phone: string;
-        created_at: string;
-        updated_at: string;
         city: string | null;
         province: string | null;
         postal_code: string | null;
-        store_id: number;
         address: string | null;
+        id: number;
+        created_at: string;
+        updated_at: string;
+        store_id: number;
         metadata: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;

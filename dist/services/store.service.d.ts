@@ -3,6 +3,9 @@ export declare class StoreService {
     createStore(userId: number, data: CreateStoreInput): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -11,13 +14,13 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }>;
     getStore(storeId: number): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -26,13 +29,13 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }>;
     getStoreBySlug(slug: string): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -41,13 +44,13 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }>;
     getUserStores(userId: number): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -56,13 +59,13 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }[]>;
     updateStore(storeId: number, userId: number, data: UpdateStoreInput): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -71,13 +74,13 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }>;
     updateStoreLogo(storeId: number, userId: number, logoUrl: string): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -86,13 +89,13 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }>;
     deleteStore(storeId: number, userId: number): Promise<{
         name: string;
         description: string | null;
+        city: string | null;
+        province: string | null;
+        postal_code: string | null;
         id: number;
         is_active: boolean;
         created_at: Date;
@@ -101,9 +104,6 @@ export declare class StoreService {
         slug: string;
         logo_url: string | null;
         banner_url: string | null;
-        city: string | null;
-        province: string | null;
-        postal_code: string | null;
     }>;
     private generateSlug;
 }

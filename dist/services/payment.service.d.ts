@@ -26,46 +26,46 @@ export declare class PaymentService {
      * Get payment by order ID
      */
     getPaymentByOrderId(orderId: number): Promise<{
-        status: "pending" | "paid" | "processing" | "failed" | "cancelled" | "refunded";
-        order_id: number;
+        status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
-        store_id: number;
-        amount: string;
-        method: "credit_card" | "bank_transfer" | "qris" | "e_wallet" | "cash";
-        reference_id: string | null;
-        gateway_response: unknown;
         created_at: Date;
         updated_at: Date;
+        store_id: number;
+        order_id: number;
+        amount: string;
+        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        reference_id: string | null;
+        gateway_response: unknown;
     }>;
     /**
      * Get payment by reference ID (order number)
      */
     getPaymentByReferenceId(referenceId: string): Promise<{
-        status: "pending" | "paid" | "processing" | "failed" | "cancelled" | "refunded";
-        order_id: number;
+        status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
-        store_id: number;
-        amount: string;
-        method: "credit_card" | "bank_transfer" | "qris" | "e_wallet" | "cash";
-        reference_id: string | null;
-        gateway_response: unknown;
         created_at: Date;
         updated_at: Date;
+        store_id: number;
+        order_id: number;
+        amount: string;
+        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        reference_id: string | null;
+        gateway_response: unknown;
     }>;
     /**
      * Update payment status
      */
     updatePaymentStatus(paymentId: number, status: string, gatewayResponse?: any): Promise<{
-        status: "pending" | "paid" | "processing" | "failed" | "cancelled" | "refunded";
-        order_id: number;
+        status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
-        store_id: number;
-        amount: string;
-        method: "credit_card" | "bank_transfer" | "qris" | "e_wallet" | "cash";
-        reference_id: string | null;
-        gateway_response: unknown;
         created_at: Date;
         updated_at: Date;
+        store_id: number;
+        order_id: number;
+        amount: string;
+        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        reference_id: string | null;
+        gateway_response: unknown;
     }>;
     /**
      * Handle Midtrans webhook

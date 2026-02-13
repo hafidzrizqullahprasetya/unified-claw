@@ -28,16 +28,16 @@ export declare function getPayment(c: Context): Promise<(Response & import("hono
 }, 401, "json">) | (Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        status: "pending" | "paid" | "processing" | "failed" | "cancelled" | "refunded";
-        order_id: number;
+        status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
-        store_id: number;
-        amount: string;
-        method: "credit_card" | "bank_transfer" | "qris" | "e_wallet" | "cash";
-        reference_id: string | null;
-        gateway_response: import("hono/utils/types").JSONValue;
         created_at: string;
         updated_at: string;
+        store_id: number;
+        order_id: number;
+        amount: string;
+        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        reference_id: string | null;
+        gateway_response: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">)>;
 /**

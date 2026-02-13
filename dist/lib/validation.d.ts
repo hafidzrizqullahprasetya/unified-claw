@@ -188,7 +188,7 @@ export declare const createOrderSchema: z.ZodObject<{
         product_variant_id?: number | undefined;
     }[];
     notes?: string | undefined;
-    channel?: "whatsapp" | "telegram" | "web" | "mobile" | "api" | undefined;
+    channel?: "web" | "whatsapp" | "telegram" | "mobile" | "api" | undefined;
 }, {
     customer_id: number;
     items: {
@@ -197,7 +197,7 @@ export declare const createOrderSchema: z.ZodObject<{
         product_variant_id?: number | undefined;
     }[];
     notes?: string | undefined;
-    channel?: "whatsapp" | "telegram" | "web" | "mobile" | "api" | undefined;
+    channel?: "web" | "whatsapp" | "telegram" | "mobile" | "api" | undefined;
 }>;
 export declare const updateOrderStatusSchema: z.ZodObject<{
     status: z.ZodEnum<["pending", "confirmed", "processing", "shipped", "delivered", "cancelled", "refunded"]>;
