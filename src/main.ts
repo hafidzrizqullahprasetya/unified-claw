@@ -308,6 +308,17 @@ app.post("/api/payments/webhook/midtrans", async (c) => {
   return midtransWebhook(c);
 });
 
+// WhatsApp webhook (no auth required, Meta handles signature verification)
+app.get("/api/webhooks/whatsapp", async (c) => {
+  const { whatsappWebhookVerify } = await import("@/api/handlers/whatsapp");
+  return whatsappWebhookVerify(c);
+});
+
+app.post("/api/webhooks/whatsapp", async (c) => {
+  const { whatsappWebhookReceive } = await import("@/api/handlers/whatsapp");
+  return whatsappWebhookReceive(c);
+});
+
 // Inventory routes
 app.get("/api/stores/:storeId/inventory/products/:variantId", async (c) => {
   const { getInventoryHandler } = await import("@/api/handlers/inventory");
