@@ -14,9 +14,19 @@ const envSchema = z.object({
     MIDTRANS_CLIENT_KEY: z.string().min(1, "MIDTRANS_CLIENT_KEY is required"),
     MIDTRANS_MERCHANT_ID: z.string().min(1, "MIDTRANS_MERCHANT_ID is required"),
     MIDTRANS_ENV: z.enum(["sandbox", "production"]).default("sandbox"),
-    // Messaging (optional for MVP)
+    // WhatsApp Business API (optional for MVP)
+    WHATSAPP_BUSINESS_PHONE_ID: z.string().optional(),
+    WHATSAPP_BUSINESS_ACCOUNT_ID: z.string().optional(),
     WHATSAPP_API_TOKEN: z.string().optional(),
+    WHATSAPP_WEBHOOK_VERIFY_TOKEN: z.string().optional(),
+    // Telegram (optional for future)
     TELEGRAM_BOT_TOKEN: z.string().optional(),
+    // AI LLM Providers (for Agent)
+    ANTHROPIC_API_KEY: z.string().optional(),
+    OPENAI_API_KEY: z.string().optional(),
+    GEMINI_API_KEY: z.string().optional(),
+    LLAMA_API_KEY: z.string().optional(),
+    LLAMA_BASE_URL: z.string().optional(),
     // Admin
     ADMIN_EMAIL: z.string().email(),
     ADMIN_PASSWORD: z

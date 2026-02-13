@@ -1,11 +1,12 @@
 /**
  * LLM Provider Abstraction
- * Unified interface for Claude, GPT, Llama
+ * Unified interface for Claude, GPT, Llama, Gemini
  */
 
 import { generateText, LanguageModel } from "ai";
 import { createAnthropic } from "@ai-sdk/anthropic";
 import { createOpenAI } from "@ai-sdk/openai";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import type { LLMProvider, LLMProviderConfig } from "@/lib/agent.types";
 import { getEnv } from "@/env";
 import { ValidationError } from "@/lib/errors";
@@ -33,6 +34,17 @@ export class LLMProviderFactory {
         }
         const openai = createOpenAI({ apiKey: gptApiKey });
         return openai(config?.model || "gpt-4-turbo");
+
+      case "gemini":
+        const geminiApiKey = config?.apiKey || env.GEMINI_API_KEY;
+        if (!geminiApiKey) {
+          throw new ValidationError("GEMINI_API_KEY not configured");
+        }
+        // Create Gemini provider with API key
+        const geminiProvider = createGoogleGenerativeAI({
+          apiKey: geminiApiKey,
+        });
+        return geminiProvider(config?.model || "gemini-1.5-flash");
 
       case "llama":
         // For Llama, we can use OpenAI-compatible API (e.g., Together.ai, Ollama)

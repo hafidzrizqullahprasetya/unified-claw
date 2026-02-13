@@ -10,8 +10,16 @@ import { ValidationError } from "@/lib/errors";
 import { getEnv } from "@/env";
 
 // Initialize agent service with default config
+const defaultProvider = (
+  getEnv().ANTHROPIC_API_KEY
+    ? "claude"
+    : getEnv().GEMINI_API_KEY
+      ? "gemini"
+      : "claude"
+) as "claude" | "gpt" | "llama" | "gemini";
+
 const agentConfig: AgentConfig = {
-  provider: "claude",
+  provider: defaultProvider,
   systemPrompt: `You are a helpful AI assistant for an e-commerce store. 
 You help customers:
 - Browse products and get information

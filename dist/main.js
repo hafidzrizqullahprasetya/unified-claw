@@ -244,6 +244,15 @@ app.post("/api/payments/webhook/midtrans", async (c) => {
     const { midtransWebhook } = await import("@/api/handlers/payment");
     return midtransWebhook(c);
 });
+// WhatsApp webhook (no auth required, Meta handles signature verification)
+app.get("/api/webhooks/whatsapp", async (c) => {
+    const { whatsappWebhookVerify } = await import("@/api/handlers/whatsapp");
+    return whatsappWebhookVerify(c);
+});
+app.post("/api/webhooks/whatsapp", async (c) => {
+    const { whatsappWebhookReceive } = await import("@/api/handlers/whatsapp");
+    return whatsappWebhookReceive(c);
+});
 // Inventory routes
 app.get("/api/stores/:storeId/inventory/products/:variantId", async (c) => {
     const { getInventoryHandler } = await import("@/api/handlers/inventory");
@@ -268,6 +277,19 @@ app.post("/api/stores/:storeId/inventory/release/:reservationId", async (c) => {
 app.get("/api/stores/:storeId/inventory/low-stock", async (c) => {
     const { checkLowStockHandler } = await import("@/api/handlers/inventory");
     return checkLowStockHandler(c);
+});
+// AI Agent routes
+app.post("/api/agent/chat", authMiddleware, async (c) => {
+    const { agentChat } = await import("@/api/handlers/agent");
+    return agentChat(c);
+});
+app.get("/api/agent/history/:conversationId", authMiddleware, async (c) => {
+    const { getConversationHistory } = await import("@/api/handlers/agent");
+    return getConversationHistory(c);
+});
+app.delete("/api/agent/conversation/:conversationId", authMiddleware, async (c) => {
+    const { clearConversation } = await import("@/api/handlers/agent");
+    return clearConversation(c);
 });
 // Start server
 const env = getEnv();

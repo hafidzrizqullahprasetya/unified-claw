@@ -2,17 +2,17 @@ import { Context } from 'hono';
 export declare function createProduct(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        sku: string | null;
         id: number;
-        store_id: number;
-        created_at: string;
         name: string;
         description: string | null;
+        store_id: number;
+        created_at: string;
         updated_at: string;
         slug: string;
         is_active: boolean;
         price: string;
         cost_price: string | null;
+        sku: string | null;
         category: string | null;
         image_urls: import("hono/utils/types").JSONValue;
     };
@@ -20,17 +20,17 @@ export declare function createProduct(c: Context): Promise<Response & import("ho
 export declare function getProduct(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        sku: string | null;
         id: number;
-        store_id: number;
-        created_at: string;
         name: string;
         description: string | null;
+        store_id: number;
+        created_at: string;
         updated_at: string;
         slug: string;
         is_active: boolean;
         price: string;
         cost_price: string | null;
+        sku: string | null;
         category: string | null;
         image_urls: import("hono/utils/types").JSONValue;
     };
@@ -38,17 +38,17 @@ export declare function getProduct(c: Context): Promise<Response & import("hono"
 export declare function listProducts(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        sku: string | null;
         id: number;
-        store_id: number;
-        created_at: string;
         name: string;
         description: string | null;
+        store_id: number;
+        created_at: string;
         updated_at: string;
         slug: string;
         is_active: boolean;
         price: string;
         cost_price: string | null;
+        sku: string | null;
         category: string | null;
         image_urls: import("hono/utils/types").JSONValue;
     }[];
@@ -60,17 +60,17 @@ export declare function listProducts(c: Context): Promise<Response & import("hon
 export declare function updateProduct(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        sku: string | null;
         id: number;
-        store_id: number;
-        created_at: string;
         name: string;
         description: string | null;
+        store_id: number;
+        created_at: string;
         updated_at: string;
         slug: string;
         is_active: boolean;
         price: string;
         cost_price: string | null;
+        sku: string | null;
         category: string | null;
         image_urls: import("hono/utils/types").JSONValue;
     };
@@ -79,17 +79,17 @@ export declare function deleteProduct(c: Context): Promise<Response & import("ho
     success: true;
     message: string;
     data: {
-        sku: string | null;
         id: number;
-        store_id: number;
-        created_at: string;
         name: string;
         description: string | null;
+        store_id: number;
+        created_at: string;
         updated_at: string;
         slug: string;
         is_active: boolean;
         price: string;
         cost_price: string | null;
+        sku: string | null;
         category: string | null;
         image_urls: import("hono/utils/types").JSONValue;
     };
@@ -97,17 +97,17 @@ export declare function deleteProduct(c: Context): Promise<Response & import("ho
 export declare function searchProducts(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        sku: string | null;
         id: number;
-        store_id: number;
-        created_at: string;
         name: string;
         description: string | null;
+        store_id: number;
+        created_at: string;
         updated_at: string;
         slug: string;
         is_active: boolean;
         price: string;
         cost_price: string | null;
+        sku: string | null;
         category: string | null;
         image_urls: import("hono/utils/types").JSONValue;
     }[];

@@ -28,12 +28,12 @@ export declare class PaymentService {
     getPaymentByOrderId(orderId: number): Promise<{
         status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
+        store_id: number;
         created_at: Date;
         updated_at: Date;
-        store_id: number;
         order_id: number;
         amount: string;
-        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        method: "qris" | "bank_transfer" | "credit_card" | "e_wallet" | "cash";
         reference_id: string | null;
         gateway_response: unknown;
     }>;
@@ -43,12 +43,12 @@ export declare class PaymentService {
     getPaymentByReferenceId(referenceId: string): Promise<{
         status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
+        store_id: number;
         created_at: Date;
         updated_at: Date;
-        store_id: number;
         order_id: number;
         amount: string;
-        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        method: "qris" | "bank_transfer" | "credit_card" | "e_wallet" | "cash";
         reference_id: string | null;
         gateway_response: unknown;
     }>;
@@ -58,12 +58,12 @@ export declare class PaymentService {
     updatePaymentStatus(paymentId: number, status: string, gatewayResponse?: any): Promise<{
         status: "pending" | "processing" | "cancelled" | "refunded" | "paid" | "failed";
         id: number;
+        store_id: number;
         created_at: Date;
         updated_at: Date;
-        store_id: number;
         order_id: number;
         amount: string;
-        method: "bank_transfer" | "qris" | "credit_card" | "e_wallet" | "cash";
+        method: "qris" | "bank_transfer" | "credit_card" | "e_wallet" | "cash";
         reference_id: string | null;
         gateway_response: unknown;
     }>;

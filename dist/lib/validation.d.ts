@@ -6,13 +6,13 @@ export declare const registerSchema: z.ZodObject<{
     phone: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     email: string;
-    password: string;
     full_name: string;
+    password: string;
     phone?: string | undefined;
 }, {
     email: string;
-    password: string;
     full_name: string;
+    password: string;
     phone?: string | undefined;
 }>;
 export declare const loginSchema: z.ZodObject<{
@@ -125,18 +125,18 @@ export declare const createCustomerSchema: z.ZodObject<{
     name: string;
     phone: string;
     email?: string | undefined;
+    address?: string | undefined;
     city?: string | undefined;
     province?: string | undefined;
     postal_code?: string | undefined;
-    address?: string | undefined;
 }, {
     name: string;
     phone: string;
     email?: string | undefined;
+    address?: string | undefined;
     city?: string | undefined;
     province?: string | undefined;
     postal_code?: string | undefined;
-    address?: string | undefined;
 }>;
 export declare const updateCustomerSchema: z.ZodObject<{
     phone: z.ZodOptional<z.ZodString>;
@@ -148,20 +148,20 @@ export declare const updateCustomerSchema: z.ZodObject<{
     postal_code: z.ZodOptional<z.ZodOptional<z.ZodString>>;
 }, "strip", z.ZodTypeAny, {
     name?: string | undefined;
-    email?: string | undefined;
     phone?: string | undefined;
+    email?: string | undefined;
+    address?: string | undefined;
     city?: string | undefined;
     province?: string | undefined;
     postal_code?: string | undefined;
-    address?: string | undefined;
 }, {
     name?: string | undefined;
-    email?: string | undefined;
     phone?: string | undefined;
+    email?: string | undefined;
+    address?: string | undefined;
     city?: string | undefined;
     province?: string | undefined;
     postal_code?: string | undefined;
-    address?: string | undefined;
 }>;
 export declare const createOrderSchema: z.ZodObject<{
     customer_id: z.ZodNumber;
@@ -188,7 +188,7 @@ export declare const createOrderSchema: z.ZodObject<{
         product_variant_id?: number | undefined;
     }[];
     notes?: string | undefined;
-    channel?: "web" | "whatsapp" | "telegram" | "mobile" | "api" | undefined;
+    channel?: "whatsapp" | "telegram" | "web" | "mobile" | "api" | undefined;
 }, {
     customer_id: number;
     items: {
@@ -197,7 +197,7 @@ export declare const createOrderSchema: z.ZodObject<{
         product_variant_id?: number | undefined;
     }[];
     notes?: string | undefined;
-    channel?: "web" | "whatsapp" | "telegram" | "mobile" | "api" | undefined;
+    channel?: "whatsapp" | "telegram" | "web" | "mobile" | "api" | undefined;
 }>;
 export declare const updateOrderStatusSchema: z.ZodObject<{
     status: z.ZodEnum<["pending", "confirmed", "processing", "shipped", "delivered", "cancelled", "refunded"]>;

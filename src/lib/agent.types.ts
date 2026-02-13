@@ -3,7 +3,7 @@
  * Core type definitions for AI agent system
  */
 
-export type LLMProvider = "claude" | "gpt" | "llama";
+export type LLMProvider = "claude" | "gpt" | "llama" | "gemini";
 
 export interface AgentToolDefinition {
   name: string;

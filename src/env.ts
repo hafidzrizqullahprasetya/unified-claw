@@ -29,6 +29,7 @@ const envSchema = z.object({
   // AI LLM Providers (for Agent)
   ANTHROPIC_API_KEY: z.string().optional(),
   OPENAI_API_KEY: z.string().optional(),
+  GEMINI_API_KEY: z.string().optional(),
   LLAMA_API_KEY: z.string().optional(),
   LLAMA_BASE_URL: z.string().optional(),
 

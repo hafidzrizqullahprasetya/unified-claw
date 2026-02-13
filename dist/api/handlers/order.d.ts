@@ -9,7 +9,8 @@ export declare function createOrder(c: Context): Promise<Response & import("hono
             unit_price: string;
             subtotal: string;
         }[];
-        status: "pending" | "processing" | "cancelled" | "refunded" | "confirmed" | "shipped" | "delivered";
+        status: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled" | "refunded";
+        metadata: import("hono/utils/types").JSONValue;
         id: number;
         store_id: number;
         created_at: string;
@@ -22,7 +23,6 @@ export declare function createOrder(c: Context): Promise<Response & import("hono
         discount_amount: string | null;
         notes: string | null;
         channel: "whatsapp" | "telegram" | "web" | "mobile" | "api";
-        metadata: import("hono/utils/types").JSONValue;
     };
 }, any, "json">>;
 export declare function getOrder(c: Context): Promise<Response & import("hono").TypedResponse<{
@@ -30,15 +30,16 @@ export declare function getOrder(c: Context): Promise<Response & import("hono").
     data: {
         items: {
             id: number;
-            order_id: number;
-            product_variant_id: number | null;
-            quantity: number;
             created_at: string;
             product_id: number;
+            product_variant_id: number | null;
+            quantity: number;
+            order_id: number;
             unit_price: string;
             subtotal: string;
         }[];
-        status: "pending" | "processing" | "cancelled" | "refunded" | "confirmed" | "shipped" | "delivered";
+        status: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled" | "refunded";
+        metadata: import("hono/utils/types").JSONValue;
         id: number;
         store_id: number;
         created_at: string;
@@ -51,13 +52,13 @@ export declare function getOrder(c: Context): Promise<Response & import("hono").
         discount_amount: string | null;
         notes: string | null;
         channel: "whatsapp" | "telegram" | "web" | "mobile" | "api";
-        metadata: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 export declare function listOrders(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        status: "pending" | "processing" | "cancelled" | "refunded" | "confirmed" | "shipped" | "delivered";
+        status: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled" | "refunded";
+        metadata: import("hono/utils/types").JSONValue;
         id: number;
         store_id: number;
         created_at: string;
@@ -70,7 +71,6 @@ export declare function listOrders(c: Context): Promise<Response & import("hono"
         discount_amount: string | null;
         notes: string | null;
         channel: "whatsapp" | "telegram" | "web" | "mobile" | "api";
-        metadata: import("hono/utils/types").JSONValue;
     }[];
     pagination: {
         limit: number;
@@ -80,7 +80,8 @@ export declare function listOrders(c: Context): Promise<Response & import("hono"
 export declare function updateOrderStatus(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     data: {
-        status: "pending" | "processing" | "cancelled" | "refunded" | "confirmed" | "shipped" | "delivered";
+        status: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled" | "refunded";
+        metadata: import("hono/utils/types").JSONValue;
         id: number;
         store_id: number;
         created_at: string;
@@ -93,14 +94,14 @@ export declare function updateOrderStatus(c: Context): Promise<Response & import
         discount_amount: string | null;
         notes: string | null;
         channel: "whatsapp" | "telegram" | "web" | "mobile" | "api";
-        metadata: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 export declare function cancelOrder(c: Context): Promise<Response & import("hono").TypedResponse<{
     success: true;
     message: string;
     data: {
-        status: "pending" | "processing" | "cancelled" | "refunded" | "confirmed" | "shipped" | "delivered";
+        status: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled" | "refunded";
+        metadata: import("hono/utils/types").JSONValue;
         id: number;
         store_id: number;
         created_at: string;
@@ -113,7 +114,6 @@ export declare function cancelOrder(c: Context): Promise<Response & import("hono
         discount_amount: string | null;
         notes: string | null;
         channel: "whatsapp" | "telegram" | "web" | "mobile" | "api";
-        metadata: import("hono/utils/types").JSONValue;
     };
 }, import("hono/utils/http-status").ContentfulStatusCode, "json">>;
 //# sourceMappingURL=order.d.ts.map

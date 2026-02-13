@@ -9,8 +9,16 @@ declare const envSchema: z.ZodObject<{
     MIDTRANS_CLIENT_KEY: z.ZodString;
     MIDTRANS_MERCHANT_ID: z.ZodString;
     MIDTRANS_ENV: z.ZodDefault<z.ZodEnum<["sandbox", "production"]>>;
+    WHATSAPP_BUSINESS_PHONE_ID: z.ZodOptional<z.ZodString>;
+    WHATSAPP_BUSINESS_ACCOUNT_ID: z.ZodOptional<z.ZodString>;
     WHATSAPP_API_TOKEN: z.ZodOptional<z.ZodString>;
+    WHATSAPP_WEBHOOK_VERIFY_TOKEN: z.ZodOptional<z.ZodString>;
     TELEGRAM_BOT_TOKEN: z.ZodOptional<z.ZodString>;
+    ANTHROPIC_API_KEY: z.ZodOptional<z.ZodString>;
+    OPENAI_API_KEY: z.ZodOptional<z.ZodString>;
+    GEMINI_API_KEY: z.ZodOptional<z.ZodString>;
+    LLAMA_API_KEY: z.ZodOptional<z.ZodString>;
+    LLAMA_BASE_URL: z.ZodOptional<z.ZodString>;
     ADMIN_EMAIL: z.ZodString;
     ADMIN_PASSWORD: z.ZodString;
 }, "strip", z.ZodTypeAny, {
@@ -25,8 +33,16 @@ declare const envSchema: z.ZodObject<{
     MIDTRANS_ENV: "production" | "sandbox";
     ADMIN_EMAIL: string;
     ADMIN_PASSWORD: string;
+    WHATSAPP_BUSINESS_PHONE_ID?: string | undefined;
+    WHATSAPP_BUSINESS_ACCOUNT_ID?: string | undefined;
     WHATSAPP_API_TOKEN?: string | undefined;
+    WHATSAPP_WEBHOOK_VERIFY_TOKEN?: string | undefined;
     TELEGRAM_BOT_TOKEN?: string | undefined;
+    ANTHROPIC_API_KEY?: string | undefined;
+    OPENAI_API_KEY?: string | undefined;
+    GEMINI_API_KEY?: string | undefined;
+    LLAMA_API_KEY?: string | undefined;
+    LLAMA_BASE_URL?: string | undefined;
 }, {
     DATABASE_URL: string;
     JWT_SECRET: string;
@@ -39,8 +55,16 @@ declare const envSchema: z.ZodObject<{
     PORT?: string | undefined;
     JWT_EXPIRY?: string | undefined;
     MIDTRANS_ENV?: "production" | "sandbox" | undefined;
+    WHATSAPP_BUSINESS_PHONE_ID?: string | undefined;
+    WHATSAPP_BUSINESS_ACCOUNT_ID?: string | undefined;
     WHATSAPP_API_TOKEN?: string | undefined;
+    WHATSAPP_WEBHOOK_VERIFY_TOKEN?: string | undefined;
     TELEGRAM_BOT_TOKEN?: string | undefined;
+    ANTHROPIC_API_KEY?: string | undefined;
+    OPENAI_API_KEY?: string | undefined;
+    GEMINI_API_KEY?: string | undefined;
+    LLAMA_API_KEY?: string | undefined;
+    LLAMA_BASE_URL?: string | undefined;
 }>;
 export type Env = z.infer<typeof envSchema>;
 export declare function getEnv(): Env;
