@@ -7,7 +7,6 @@ import useAccordion from '@/components/hooks/useAccordion';
 import useTabs from '@/components/hooks/useTabs';
 import Header_01 from '@/components/header/Header_01';
 import Footer_01 from '@/components/footer/Footer_01';
-import ConvergenceEngine from '@/components/ConvergenceEngine';
 
 function Home() {
   const [activeIndex, handleAccordion] = useAccordion(0);
@@ -24,38 +23,51 @@ function Home() {
         <section id='section-hero'>
           <div className='relative z-[1] overflow-hidden rounded-bl-[30px] rounded-br-[30px] bg-colorLinenRuffle pb-20 pt-28 lg:rounded-bl-[50px] lg:rounded-br-[50px] lg:pb-24 lg:pt-32 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]'>
             <div className='global-container'>
+              {/* Hero Content with Crab */}
               <div className='mb-14 flex flex-col items-center text-center lg:mb-20'>
+                {/* Crab Image - Front and Center */}
+                <div className='relative mb-8 w-full flex justify-center'>
+                  <Image
+                    src='/assets/crab.png'
+                    alt='Crab - The Unified Claw'
+                    width={800}
+                    height={600}
+                    className='w-auto h-auto object-contain'
+                    style={{ maxWidth: '800px', maxHeight: '600px' }}
+                    priority
+                  />
+                </div>
+                
+                {/* Title */}
                 <h1 className='jos slide-from-bottom mb-6 max-w-[510px] lg:max-w-[768px] xl:max-w-[1076px]'>
-                  Simplify your SaaS solution with AI
+                  UnifiedClaw
                 </h1>
+                
+                {/* Description */}
                 <p className='jos slide-from-bottom mb-11 max-w-[700px] text-lg font-semibold sm:text-xl xl:max-w-[980px]'>
                   Our AI SAAS tool is a cloud-based software delivery model. It
                   helps businesses forecast demand for products and services and
                   optimize inventory management and supply chain operations.
                 </p>
+                
+                {/* Buttons */}
                 <div
                   className='jos flex flex-wrap justify-center gap-6'
                   data-jos_animation='fade'
                 >
                   <Link
                     href='#'
-                    className='button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white'
+                    className='button rounded-[50px] border-2 border-black bg-black py-4 px-8 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white'
                   >
                     Get started for free
                   </Link>
                   <Link
                     href='#'
-                    className='button rounded-[50px] border-2 border-black bg-transparent py-4 text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white'
+                    className='button rounded-[50px] border-2 border-black bg-transparent py-4 px-8 text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white'
                   >
                     Learn more
                   </Link>
                 </div>
-              </div>
-              <div
-                className='jos hero-img overflow-hidden rounded-2xl bg-black'
-                data-jos_animation='zoom'
-              >
-                <ConvergenceEngine />
               </div>
 
               <div className='my-10 h-[1px] w-full bg-[#DBD6CF] lg:my-16 xl:my-20'></div>
